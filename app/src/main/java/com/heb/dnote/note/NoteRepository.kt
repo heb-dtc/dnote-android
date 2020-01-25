@@ -12,7 +12,8 @@ class NoteRepository {
 
 
     fun getNotes() : List<Note> {
-        return listOf(getMockNote(1), getMockNote(2), getMockNote(3), getMockNote(4))
+        return listOf(getMockNote(1), getMockNote(2), getMockNote(3), getMockNote(4),
+            getMockNote(5), getMockNote(6), getMockNote(7), getMockNote(8))
     }
 
     private fun getMockNote(id: Int): Note {
