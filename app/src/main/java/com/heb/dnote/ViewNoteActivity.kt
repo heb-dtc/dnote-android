@@ -12,7 +12,7 @@ import com.heb.dnote.note.NoteRepository
 const val EXTRA_NOTE_ID = "com.heb.dnote.NOTE_ID"
 const val NO_NOTE_ID = -1
 
-class NoteActivity : AppCompatActivity() {
+class ViewNoteActivity : AppCompatActivity() {
 
     private val bookTitleView: TextView by lazy {
         findViewById<TextView>(R.id.book_name)
@@ -29,12 +29,12 @@ class NoteActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_note)
+        setContentView(R.layout.activity_view_note)
 
         val noteId = intent.getIntExtra(EXTRA_NOTE_ID, NO_NOTE_ID)
 
         val noteObserver = Observer<Note> {
-            Log.d("NoteActivity", "got $it")
+            Log.d("ViewNoteActivity", "got $it")
             bookTitleView.text = it.book.title
             noteContentView.text = it.content
         }

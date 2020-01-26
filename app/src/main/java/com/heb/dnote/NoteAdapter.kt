@@ -34,7 +34,7 @@ class NoteAdapter(private val notes: List<Note>) :
             view.note_content.text = note.content
 
             view.setOnClickListener {
-                it.context.startActivity(Intent(it.context, NoteActivity::class.java).putExtra(
+                it.context.startActivity(Intent(it.context, ViewNoteActivity::class.java).putExtra(
                     EXTRA_NOTE_ID, note.id))
             }
         }

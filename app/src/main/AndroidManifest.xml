@@ -19,7 +19,7 @@
         </activity>
 
         <activity
-            android:name=".NoteActivity"
+            android:name=".ViewNoteActivity"
             android:parentActivityName=".MainActivity" />
 
         <activity
