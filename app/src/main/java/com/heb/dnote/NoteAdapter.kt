@@ -1,5 +1,6 @@
 package com.heb.dnote
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,6 +32,11 @@ class NoteAdapter(private val notes: List<Note>) :
             this.note = note
             view.book_name.text = note.book.title
             view.note_content.text = note.content
+
+            view.setOnClickListener {
+                it.context.startActivity(Intent(it.context, NoteActivity::class.java).putExtra(
+                    EXTRA_NOTE_ID, note.id))
+            }
         }
     }
 }
