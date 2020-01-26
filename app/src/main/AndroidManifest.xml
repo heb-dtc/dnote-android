@@ -18,8 +18,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NoteActivity"
-            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".NoteActivity"
+            android:parentActivityName=".MainActivity" />
+
+        <activity
+            android:name=".AddNoteActivity"
+            android:parentActivityName=".MainActivity" />
 
     </application>
 
