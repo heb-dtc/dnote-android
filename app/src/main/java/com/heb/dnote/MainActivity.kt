@@ -1,8 +1,10 @@
 package com.heb.dnote
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +16,10 @@ class MainActivity : AppCompatActivity() {
 
     private val recyclerView: RecyclerView by lazy {
         findViewById<RecyclerView>(R.id.recycler_view)
+    }
+
+    private val addNewNoteButton: View by lazy {
+        findViewById<View>(R.id.add_new_note_button)
     }
     
     private lateinit var linearLayoutManager: LinearLayoutManager
@@ -29,6 +35,10 @@ class MainActivity : AppCompatActivity() {
 
         linearLayoutManager = LinearLayoutManager(this)
         recyclerView.layoutManager = linearLayoutManager
+
+        addNewNoteButton.setOnClickListener {
+            startActivity(Intent(this, AddNoteActivity::class.java))
+        }
 
         val noteItemsObserver = Observer<List<Note>> {
             Log.d("MainActivity", "got ${it.size} notes")
