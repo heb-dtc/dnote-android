@@ -19,4 +19,8 @@ class NoteRepository {
     private fun getMockNote(id: Int): Note {
         return Note(id, mockBook, mockContent)
     }
+
+    fun getNote(noteId: Int): Note {
+        return getMockNote(noteId)
+    }
 }
