@@ -23,7 +23,8 @@ class ViewNoteActivity : AppCompatActivity() {
     }
 
     private val noteViewModel: NoteViewModel by lazy {
-        ViewModelProvider(this, NoteViewModelFactory(NoteRepository()))
+        val appContainer = (this.application as DNoteApplication).applicationContainer
+        ViewModelProvider(this, NoteViewModelFactory(appContainer.noteRepository))
             .get(NoteViewModel::class.java)
     }
 

@@ -10,7 +10,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.heb.dnote.note.Note
-import com.heb.dnote.note.NoteRepository
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,11 +20,12 @@ class MainActivity : AppCompatActivity() {
     private val addNewNoteButton: View by lazy {
         findViewById<View>(R.id.add_new_note_button)
     }
-    
+
     private lateinit var linearLayoutManager: LinearLayoutManager
 
     private val viewModel: ListNoteViewModel by lazy {
-        ViewModelProvider(this, ListNoteViewModelFactory(NoteRepository()))
+        val appContainer = (this.application as DNoteApplication).applicationContainer
+        ViewModelProvider(this, ListNoteViewModelFactory(appContainer.noteRepository))
             .get(ListNoteViewModel::class.java)
     }
 
