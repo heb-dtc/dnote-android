@@ -10,17 +10,32 @@ class NoteRepository {
             "pellentesque mauris, non varius urna ligula quis nulla. Donec " +
             "ullamcorper fringilla nunc, non varius massa rhoncus sit amet. "
 
+    private val items: MutableList<Note> = mutableListOf()
 
-    fun getNotes() : List<Note> {
-        return listOf(getMockNote(1), getMockNote(2), getMockNote(3), getMockNote(4),
-            getMockNote(5), getMockNote(6), getMockNote(7), getMockNote(8))
+    fun getNotes(): List<Note> {
+        if (items.isEmpty()) {
+            items.addAll(
+                listOf(
+                    getMockNote(1), getMockNote(2), getMockNote(3), getMockNote(4),
+                    getMockNote(5), getMockNote(6), getMockNote(7), getMockNote(8)
+                )
+            )
+        }
+        return items
     }
 
     private fun getMockNote(id: Int): Note {
         return Note(id, mockBook, mockContent)
     }
 
-    fun getNote(noteId: Int): Note {
-        return getMockNote(noteId)
+    fun getNote(noteId: Int): Note? {
+        return items.find {
+            it.id == noteId
+        }
+    }
+
+    fun saveNote(content: String, bookId: Int) {
+        val note = items.get(items.size - 1)
+        items.add(0, Note(note.id + 1, mockBook, content))
     }
 }
