@@ -1,4 +1,4 @@
-package com.heb.dnote.login
+package com.heb.dnote.login.server
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 
 import com.heb.dnote.R
+import com.heb.dnote.login.LoginViewModel
 
 class ServerFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.heb.dnote.login
+package com.heb.dnote.login.signin
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import com.heb.dnote.R
+import com.heb.dnote.login.LoginViewModel
 
 class SignInFragment : Fragment() {
 

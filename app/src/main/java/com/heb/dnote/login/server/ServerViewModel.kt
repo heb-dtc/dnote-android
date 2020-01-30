@@ -1,4 +1,4 @@
-package com.heb.dnote.login
+package com.heb.dnote.login.server
 
 import androidx.lifecycle.ViewModel
 

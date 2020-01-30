@@ -1,4 +1,4 @@
-package com.heb.dnote.login
+package com.heb.dnote.login.signin
 
 /**
  * User details post authentication that is exposed to the UI

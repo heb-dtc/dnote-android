@@ -1,7 +1,10 @@
-package com.heb.dnote.login
+package com.heb.dnote.login.signin
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.heb.dnote.login.LoginDataSource
+import com.heb.dnote.login.LoginRepository
+import com.heb.dnote.login.LoginViewModel
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

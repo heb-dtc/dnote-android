@@ -8,6 +8,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.heb.dnote.MainActivity
 
 import com.heb.dnote.R
+import com.heb.dnote.login.server.ServerFragment
+import com.heb.dnote.login.signin.SignInFragment
 
 class LoginActivity : AppCompatActivity() {
 
@@ -32,6 +34,9 @@ class LoginActivity : AppCompatActivity() {
         val userLoggedObserver = Observer<Boolean> {
             if (it) {
                 startActivity(Intent(this, MainActivity::class.java))
+                    .apply {
+                        finish()
+                    }
             }
         }
 
@@ -54,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
         )
             .get(LoginViewModel::class.java)
 
-        loginViewModel.loginFormState.observe(this@LoginActivity, Observer {
+        loginViewModel.signInFormState.observe(this@LoginActivity, Observer {
             val loginState = it ?: return@Observer
 
             // disable login button unless both username / password is valid
